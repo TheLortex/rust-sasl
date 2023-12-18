@@ -170,6 +170,10 @@ fn build_sasl(metadata: &Metadata) {
         // NOTE(benesch): linking gssapi_krb5 and its dependencies should one
         // day be the responsibility of a libgssapi-sys project. Unfortunately
         // none of the several options on crates.io are presently up to snuff.
+        eprintln!(
+            "AAAAA: env var: {:?}",
+            env::var("DEP_KRB5_SRC_ROOT").unwrap()
+        );
         println!(
             "cargo:rustc-link-search=native={}",
             PathBuf::from(env::var("DEP_KRB5_SRC_ROOT").unwrap())
