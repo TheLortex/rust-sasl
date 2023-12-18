@@ -174,6 +174,7 @@ fn build_sasl(metadata: &Metadata) {
             "AAAAA: env var: {:?}",
             env::var("DEP_KRB5_SRC_ROOT").unwrap()
         );
+        panic!("ok");
         println!(
             "cargo:rustc-link-search=native={}",
             PathBuf::from(env::var("DEP_KRB5_SRC_ROOT").unwrap())
